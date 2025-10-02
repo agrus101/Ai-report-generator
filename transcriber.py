@@ -10,8 +10,11 @@ parser.add_argument('output', metavar='o', type=str,
 
 args = parser.parse_args()
 
+
 def transcribe(name):
-    
+    model = whisper.load_model("base")
+
+    result = model.transcribe(name)
     return result 
 
 if __name__ == "__main__":
