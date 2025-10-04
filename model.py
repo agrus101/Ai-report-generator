@@ -30,7 +30,7 @@ class ModulePathTracer(torch.fx.Tracer):
         Override of `Tracer.create_proxy`.
         """
         proxy = super().create_proxy(kind, target, args, kwargs, name, type_expr)
-        self.node_to_originating_module[proxy.node] = args
+        self.node_to_originating_module[proxy.node] = self.current_module_qualified_name
         return proxy
 
 
