@@ -35,7 +35,7 @@ class ModulePathTracer(torch.fx.Tracer):
 
 
 def main():
-    model = model(pretrained=True)
+    model = model.resnet18(pretrained=True)
 
     # Instantiate our ModulePathTracer and use that to trace our ResNet18
     tracer = ModulePathTracer()
